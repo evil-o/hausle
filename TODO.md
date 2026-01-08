@@ -4,11 +4,11 @@ List of todos / rough project plan
 
 ## Project kickoff
 
-[ ] Init repo
+[x] Init repo
 [ ] Init app
-    [ ] Hello world style
+    [x] Hello world style
     [ ] State management - flux / redux style?
-    [ ] Typescript
+    [x] Typescript
 [ ] Build pipeline
     [ ] Bundling / dist / build
     [ ] Unit tests
@@ -22,6 +22,7 @@ List of todos / rough project plan
     [ ] Define meters: Name, id, unit of measurement
     [ ] Enter data for meter (timestamp + value)
     [ ] Enter cost plan for meter
+    [ ] Track down payments and project how much money will have to be paid in the end
 [ ] Expense planner
     [ ] Track planned one time expenses
         [ ] Estimated amount, date

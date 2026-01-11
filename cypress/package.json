@@ -11,7 +11,7 @@
     "preview": "cd ../app && npm run preview",
     "vite-dev": "cd ../app && npm run dev-test",
     "test:e2e": "start-server-and-test preview http://localhost:4173 'cypress run --e2e'",
-    "test:e2e:dev": "start-server-and-test vite-dev http://localhost:4173 'cypress open --e2e'",
+    "test:e2e:dev": "start-server-and-test vite-dev http://0.0.0.0:4173 'cypress open --e2e'",
     "lint": "eslint . --fix --cache",
     "format": "prettier --write --experimental-cli src/"
   },

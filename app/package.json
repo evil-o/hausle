@@ -8,9 +8,9 @@
   },
   "scripts": {
     "dev": "vite",
-    "dev-test": "vite --port 4173",
+    "dev-test": "vite --port 4200",
     "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview --host --port 4173",
+    "preview": "vite preview --strictPort true --port 4200",
     "test:unit": "vitest",
     "build-only": "vite build --base=/hausle/",
     "type-check": "vue-tsc --build",

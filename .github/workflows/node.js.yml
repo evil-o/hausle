@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [22.x]
+        node-version: [25.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -43,10 +43,21 @@ jobs:
       working-directory: ./app
       run: npm run test:unit
 
-    # Does not work yet, to be fixed later
-    # - name: Cypress tests
-    #   working-directory: ./cypress
-    #   run: npm run test:e2e
+    # Build ============
+    - name: Build
+      working-directory: ./app
+      run: npm run build
+
+    # Cypress tests ====
+    - name: Start server
+      working-directory: ./app
+      run: npm run dev-test &
+
+    - name: Cypress tests
+      uses: cypress-io/github-action@v6
+      with:
+        working-directory: ./cypress
+        wait-on: http://localhost:4200
 
     # Deployment prep ==
 

@@ -1,10 +1,5 @@
+import { StorageProvider } from '@/models/storage-provider';
 import { defineStore } from 'pinia'
-
-export enum StorageProvider {
-    None = "None",
-    LocalStorage= "LocalStorage",
-    GoogleDrive = "GoogleDrive",
-}
 
 export const useStorageStore = defineStore('storage', {
     state: () => ({chosenProvider: StorageProvider.None}),

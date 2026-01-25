@@ -1,0 +1,3 @@
+<template>
+    Meters page
+</template>

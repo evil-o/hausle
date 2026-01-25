@@ -7,9 +7,12 @@ const storage = useStorageStore();
 <template>
   <!-- #region template -->
   <BNavbar v-b-color-mode="'dark'" toggleable="lg" variant="primary">
-    <BNavbarBrand href="#navbar-overview">NavBar</BNavbarBrand>
+    <RouterLink to="/"><BNavbarBrand>NavBar</BNavbarBrand></RouterLink>
     <BNavbarToggle target="nav-collapse" />
     <BCollapse id="nav-collapse" is-nav>
+      <BNavbarNav>
+        <RouterLink to="/meters"><BNavItem>Meters</BNavItem></RouterLink>
+      </BNavbarNav>
       <!-- Right aligned nav items -->
       <BNavbarNav class="ms-auto mb-2 mb-lg-0">
         <BNavForm class="d-flex align-content-end">

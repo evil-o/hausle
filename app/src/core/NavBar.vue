@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { useStorageStore } from "@/stores/storage"
+
+const storage = useStorageStore();
 </script>
 
 <template>
@@ -7,31 +10,12 @@
     <BNavbarBrand href="#navbar-overview">NavBar</BNavbarBrand>
     <BNavbarToggle target="nav-collapse" />
     <BCollapse id="nav-collapse" is-nav>
-      <BNavbarNav>
-        <BNavItem href="#navbar-overview">Link</BNavItem>
-        <BNavItem href="#navbar-overview" disabled>Disabled</BNavItem>
-      </BNavbarNav>
       <!-- Right aligned nav items -->
       <BNavbarNav class="ms-auto mb-2 mb-lg-0">
-        <BNavItemDropdown text="Lang" right>
-          <BDropdownItem>EN</BDropdownItem>
-          <BDropdownItem>ES</BDropdownItem>
-          <BDropdownItem>RU</BDropdownItem>
-          <BDropdownItem>FA</BDropdownItem>
-        </BNavItemDropdown>
-        <BNavItemDropdown right>
-          <!-- Using 'button-content' slot -->
-          <template #button-content>
-            <em>User</em>
-          </template>
-          <BDropdownItem>Profile</BDropdownItem>
-          <BDropdownItem>Sign Out</BDropdownItem>
-        </BNavItemDropdown>
+        <BNavForm class="d-flex align-content-end">
+          <BButton>{{ storage.chosenProvider }}</BButton>
+        </BNavForm>
       </BNavbarNav>
-      <BNavForm class="d-flex">
-        <BFormInput class="me-2" placeholder="Search" />
-        <BButton type="submit" variant="outline-success">Search</BButton>
-      </BNavForm>
     </BCollapse>
   </BNavbar>
   <!-- #endregion template -->

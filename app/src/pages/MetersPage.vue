@@ -15,5 +15,10 @@ import MeterCard from '@/components/MeterCard.vue';
             <MeterCard></MeterCard>
             <MeterCard></MeterCard>
         </BCardGroup>
+        <BRow class="mt-5">
+            <BCol>
+                <BButton variant="outline-primary">Add Meter</BButton>
+            </BCol>
+        </BRow>
     </BContainer>
 </template>

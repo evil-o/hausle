@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import MeterCard from '@/components/MeterCard.vue';
+import { useMetersStore } from '@/stores/meters';
+
+const metersStore = useMetersStore();
 
 </script>
 
@@ -11,13 +14,12 @@ import MeterCard from '@/components/MeterCard.vue';
             </BCol>
         </BRow>
         <BCardGroup deck>
-            <MeterCard></MeterCard>
-            <MeterCard></MeterCard>
-            <MeterCard></MeterCard>
+            <MeterCard v-for="meter in metersStore.meters" :key="meter.id" :meterId="meter.id" :unit="meter.unit"
+                :lastReading="meter.lastReading" :meterName="meter.name" />
         </BCardGroup>
         <BRow class="mt-5">
             <BCol>
-                <BButton variant="outline-primary">Add Meter</BButton>
+                <BButton variant="outline-primary" v-on:click="metersStore.addMeter()">Add Meter</BButton>
             </BCol>
         </BRow>
     </BContainer>

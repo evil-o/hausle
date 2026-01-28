@@ -1,10 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 
-const meterId = ref("Meter id");
-const meterName = ref("Meter name");
-const lastReading = ref(1234);
-const unit = ref("kW");
+const { lastReading, meterId, meterName, unit } = defineProps(["meterId", "meterName", "lastReading", "unit"])
 
 </script>
 

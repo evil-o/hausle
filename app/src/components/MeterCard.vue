@@ -1,12 +1,12 @@
 <script setup lang="ts">
 
-const { lastReading, meterId, meterName, unit } = defineProps(["meterId", "meterName", "lastReading", "unit"])
+const { lastReading, meterId, meterName, unit, category } = defineProps(["meterId", "meterName", "lastReading", "unit", "category"])
 
 </script>
 
 <template>
     <BCard no-body>
-        <BCardHeader>{{ meterId }}</BCardHeader>
+        <BCardHeader><small class="me-2">{{ category }}</small>{{ meterId }}</BCardHeader>
         <BCardBody>
             <BCardTitle>
                 <BCardText>{{ meterName }}</BCardText>
